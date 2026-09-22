@@ -190,4 +190,18 @@ class PasswordValidatorTest {
         boolean actual = PasswordValidator.isCommonPassword(input);
         assertFalse(actual);
     }
+
+    @Test
+    void isValid_shouldBeTrue_when123456aZ() {
+        String input = "123456aZ";
+        boolean actual = PasswordValidator.isValid(input);
+        assertTrue(actual);
+    }
+
+    @Test
+    void isValid_shouldBeTrue_when123456aa() {
+        String input = "123456aa";
+        boolean actual = PasswordValidator.isValid(input);
+        assertFalse(actual);
+    }
 }

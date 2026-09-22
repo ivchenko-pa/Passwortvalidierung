@@ -56,5 +56,12 @@ public final class PasswordValidator {
 //    // Bonus:
 //    public static boolean containsSpecialChar(String password, String allowed);
 //    // Optional:
-//    public static boolean isValid(String password); // uses the checks above
+    public static boolean isValid(String password){
+        if ( hasMinLength(password, 8) && containsDigit(password) && containsLower(password) && containsUpper(password) && !isCommonPassword(password)) {
+            System.out.println("Password accepted");
+            return true;
+        }
+        System.out.println("Password not accepted.");
+        return false;
+    }
 }
