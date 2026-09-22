@@ -4,7 +4,15 @@ public final class PasswordValidator {
         return password.length() >= min;
     }
 
-//    public static boolean containsDigit(String password);
+    public static boolean containsDigit(String password){
+        char[] chars = password.toCharArray();
+        for(char c: chars){
+            if (c >=0x30 && c <= 0x39){
+                return true;
+            }
+        }
+        return false;
+    }
 //    public static boolean containsUpperAndLower(String password);
 //    public static boolean isCommonPassword(String password); // small internal list
 //    // Bonus:

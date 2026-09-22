@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PasswordValidatorTest {
 
     @Test
-    void hasMinLength_shoudBeTrue_when8charsProvidedAndMinIs8() {
+    void hasMinLength_shoudBeTrue_whenEqualsMinLimit() {
         String input = "abcdefgh";
         int min = 8;
         boolean output = PasswordValidator.hasMinLength(input, min);
@@ -13,7 +13,7 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void hasMinLength_shoudBeTrue_when9charsProvidedAndMinIs8() {
+    void hasMinLength_shoudBeTrue_whenAboveMinLimit() {
         String input = "abcdefghi";
         int min = 8;
         boolean output = PasswordValidator.hasMinLength(input, min);
@@ -21,10 +21,38 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void hasMinLength_shoudBeFalse_when7charsProvidedAndMinIs8() {
+    void hasMinLength_shoudBeFalse_whenBelowMinLimit() {
         String input = "abcdefg";
         int min = 8;
         boolean output = PasswordValidator.hasMinLength(input, min);
         assertFalse(output);
+    }
+
+    @Test
+    void containsDigit_shouldBeTrue_whenContainsDigit() {
+        String input = "8";
+        boolean output = PasswordValidator.containsDigit(input);
+        assertTrue(output);
+    }
+
+    @Test
+    void containsDigit_shouldBeFalse_whenNoDigit() {
+        String input = "a";
+        boolean output = PasswordValidator.containsDigit(input);
+        assertFalse(output);
+    }
+
+    @Test
+    void containsDigit_shouldBeTrue_whenFirstCharIsDigit() {
+        String input = "5a";
+        boolean output = PasswordValidator.containsDigit(input);
+        assertTrue(output);
+    }
+
+    @Test
+    void containsDigit_shouldBeTrue_whenLastCharIsDigit() {
+        String input = "a5";
+        boolean output = PasswordValidator.containsDigit(input);
+        assertTrue(output);
     }
 }
