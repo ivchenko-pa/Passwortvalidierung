@@ -13,7 +13,7 @@ public final class PasswordValidator {
     public static boolean containsDigit(String password){
         char[] chars = password.toCharArray();
         for(char c: chars){
-            if (c >=0x30 && c <= 0x39){
+            if (Character.isDigit(c)){
                 return true;
             }
         }
