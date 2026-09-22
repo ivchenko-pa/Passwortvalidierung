@@ -1,6 +1,11 @@
+import java.util.Objects;
+
 public final class PasswordValidator {
 
     public static boolean hasMinLength(String password, int min) {
+        if (Objects.isNull(password)) {
+            return false;
+        }
         return password.length() >= min;
     }
 

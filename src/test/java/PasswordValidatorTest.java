@@ -29,6 +29,22 @@ class PasswordValidatorTest {
     }
 
     @Test
+    void hasMinLength_shoudBeFalse_whenEmptyStringInput() {
+        String input = "";
+        int min = 8;
+        boolean output = PasswordValidator.hasMinLength(input, min);
+        assertFalse(output);
+    }
+
+    @Test
+    void hasMinLength_shoudBeFalse_whenNullInput() {
+        String input = null;
+        int min = 8;
+        boolean output = PasswordValidator.hasMinLength(input, min);
+        assertFalse(output);
+    }
+
+    @Test
     void containsDigit_shouldBeTrue_whenContainsDigit() {
         String input = "8";
         boolean output = PasswordValidator.containsDigit(input);
