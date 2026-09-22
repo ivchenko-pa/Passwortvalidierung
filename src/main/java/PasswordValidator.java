@@ -41,10 +41,12 @@ public final class PasswordValidator {
     }
 
     public static boolean isCommonPassword(String password){
-        String[] notAllowedPasswords = {"hello", "java", "neuefische"};
+        String[] notAllowedPasswords = {"helloWorld2000", "SuperJava15", "Neuefische2026"};
 
         for (String notAllowedPassword : notAllowedPasswords){
             if (notAllowedPassword.equalsIgnoreCase(password)){
+                System.out.print("Your password belongs to common passwords list: ");
+                System.out.println(Arrays.toString(notAllowedPasswords));
                 return true;
             }
         }

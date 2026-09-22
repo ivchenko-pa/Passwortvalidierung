@@ -157,36 +157,36 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void isCommonPassword_shouldBeTrue_when_HELLO() {
-        String input = "HELLO";
+    void isCommonPassword_shouldBeTrue_when_helloWorld2000() {
+        String input = "helloWorld2000";
         boolean actual = PasswordValidator.isCommonPassword(input);
         assertTrue(actual);
     }
 
     @Test
-    void isCommonPassword_shouldBeTrue_when_Java() {
-        String input = "Java";
+    void isCommonPassword_shouldBeTrue_when_SuperJava15() {
+        String input = "SuperJava15";
         boolean actual = PasswordValidator.isCommonPassword(input);
         assertTrue(actual);
     }
 
     @Test
-    void isCommonPassword_shouldBeTrue_when_neuefische() {
-        String input = "neuefische";
+    void isCommonPassword_shouldBeTrue_when_Neuefische2026() {
+        String input = "Neuefische2026";
         boolean actual = PasswordValidator.isCommonPassword(input);
         assertTrue(actual);
     }
 
     @Test
-    void isCommonPassword_shouldBeFalse_when_hello1() {
-        String input = "hello1";
+    void isCommonPassword_shouldBeFalse_when_helloWorld20001() {
+        String input = "helloWorld20001";
         boolean actual = PasswordValidator.isCommonPassword(input);
         assertFalse(actual);
     }
 
     @Test
-    void isCommonPassword_shouldBeFalse_when_aJava() {
-        String input = "aJava";
+    void isCommonPassword_shouldBeFalse_when_aNeuefische2026() {
+        String input = "aNeuefische2026";
         boolean actual = PasswordValidator.isCommonPassword(input);
         assertFalse(actual);
     }
