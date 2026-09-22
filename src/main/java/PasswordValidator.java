@@ -40,6 +40,17 @@ public final class PasswordValidator {
         return false;
     }
 
+    public static boolean isCommonPassword(String password){
+        String[] notAllowedPasswords = {"hello", "java", "neuefische"};
+
+        for (String notAllowedPassword : notAllowedPasswords){
+            if (notAllowedPassword.equalsIgnoreCase(password)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 //    // Bonus:
 //    public static boolean containsSpecialChar(String password, String allowed);
 //    // Optional:

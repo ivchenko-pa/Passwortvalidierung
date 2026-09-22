@@ -155,4 +155,39 @@ class PasswordValidatorTest {
         boolean output = PasswordValidator.containsLower(input);
         assertFalse(output);
     }
+
+    @Test
+    void isCommonPassword_shouldBeTrue_when_HELLO() {
+        String input = "HELLO";
+        boolean actual = PasswordValidator.isCommonPassword(input);
+        assertTrue(actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldBeTrue_when_Java() {
+        String input = "Java";
+        boolean actual = PasswordValidator.isCommonPassword(input);
+        assertTrue(actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldBeTrue_when_neuefische() {
+        String input = "neuefische";
+        boolean actual = PasswordValidator.isCommonPassword(input);
+        assertTrue(actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldBeFalse_when_hello1() {
+        String input = "hello1";
+        boolean actual = PasswordValidator.isCommonPassword(input);
+        assertFalse(actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldBeFalse_when_aJava() {
+        String input = "aJava";
+        boolean actual = PasswordValidator.isCommonPassword(input);
+        assertFalse(actual);
+    }
 }
