@@ -12,6 +12,7 @@ public class Main {
             String password = scanner.nextLine();
             isPasswordValid = PasswordValidator.isValid(password);
         }
+        scanner.close();
     }
 
 }
