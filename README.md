@@ -1,4 +1,4 @@
-##Password Validator
+## Password Validator
 
 The program to verify password's validity based on predefined requirements.
 
