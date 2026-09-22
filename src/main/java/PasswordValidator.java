@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Objects;
 
 public final class PasswordValidator {
@@ -18,8 +19,27 @@ public final class PasswordValidator {
         }
         return false;
     }
-//    public static boolean containsUpperAndLower(String password);
-//    public static boolean isCommonPassword(String password); // small internal list
+
+    public static boolean containsUpper(String password){
+        char[] chars = password.toCharArray();
+        for(char c: chars){
+            if (c >=0x41 && c <= 0x5A){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean containsLower(String password){
+        char[] chars = password.toCharArray();
+        for(char c: chars){
+            if (c >=0x61 && c <= 0x7A){
+                return true;
+            }
+        }
+        return false;
+    }
+
 //    // Bonus:
 //    public static boolean containsSpecialChar(String password, String allowed);
 //    // Optional:
